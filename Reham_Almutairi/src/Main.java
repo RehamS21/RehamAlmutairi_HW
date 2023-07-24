@@ -42,6 +42,7 @@ public class Main {
         System.out.println("Question 4: ");
         System.out.println("Enter the number to check if even or odd numbers");
         int test_num = input.nextInt();
+
         int result = test_num % 2;
         if (result != 0){
             System.out.println("The number is odd with result : "+ result);
@@ -120,5 +121,5 @@ public class Main {
         }
 
 
-    }
+    } //end
 }
