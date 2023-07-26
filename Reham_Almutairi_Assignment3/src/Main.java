@@ -62,7 +62,7 @@ public class Main {
         int factorial = input.nextInt();
         do{
             if (factorial == 0) break;
-            
+
             int result_factorial = 1;
             for (int i =factorial ; i > 0 ; i--){
                 result_factorial *= i;
@@ -94,6 +94,7 @@ public class Main {
         int even = 0;
         int odd  = 0;
         do{
+            if(num_user == 0) break;
             if(num_user%2 == 0){
                 even += num_user;
             }else{
@@ -101,40 +102,44 @@ public class Main {
             }
             System.out.println("Please enter the numbers to sum the even and odd integers, or 0 to quit");
              num_user = input.nextInt();
-        }while (num_user != 0);
+        }while (true);
 
         System.out.println("The sum of even number = "+ even+"\n" +
                 "The sum of odd number = "+odd);
         System.out.println("_____________________________________");
         System.out.println("Question 7: ");
         System.out.println("We check the number is prime or not");
-        System.out.println("Please enter positive integer");
+        System.out.println("Please enter positive integer to check the prime number or 0 to quit");
         int test_prim = input.nextInt();
-        boolean not_prim = false;
+        boolean find_prim = false;
+        do{
+            if (test_prim == 0) break;
+            if(test_prim > 0) {
 
-        if(test_prim >= 0) {
-
-            if(test_prim == 0 || test_prim == 1) {
-                not_prim = true;
-            } else {
-                for (int i = 2; i <= test_prim ; i++)
-                {
-                    // to check the integers that is not prime
-                    if(test_prim % 2 == 0){
-                        not_prim = true;
+                if(test_prim == 1) {
+                    find_prim = true;
+                } else {
+                    for (int i = 2; i <= test_prim/2; i++)
+                    {
+                        // to check the integers that is not prime
+                        if(test_prim % i == 0){
+                            find_prim = true;
+                        }
                     }
                 }
-            }
-            if(!not_prim){
-                System.out.println(test_prim+ " is a prime number");
-            }else{
-                System.out.println(test_prim + " is not prime number");
-            }
+                if(find_prim){
+                    System.out.println(test_prim+ " is a not prime number");
+                }else{
+                    System.out.println(test_prim + " is prime number");
+                }
 
-        }else {
-            System.out.println("incorrect number");
-        }
-
+            }else {
+                System.out.println("incorrect number, try again");
+            }
+            System.out.println("Please enter positive integer to check the prime number or 0 to quit");
+             test_prim = input.nextInt();
+             find_prim = false;
+        }while (true);
         System.out.println("_____________________________________");
         System.out.println("Question 8: ");
         System.out.println("In this part, we will count the number of zeros, positive, and negative number");
