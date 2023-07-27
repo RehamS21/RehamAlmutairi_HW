@@ -11,11 +11,24 @@ public class Main {
 
         System.out.println("Question 1 : ");
         System.out.println("This part compare first element with last in array");
+        System.out.println("Enter the numbers or -1 to quit");
+        int user_arrays = input.nextInt();
+        ArrayList<Integer> compare_arr = new ArrayList<>();
+        do{
+            if(user_arrays == -1 && compare_arr.size() >= 2) break;
+            if(user_arrays ==-1 && compare_arr.size() < 2){
+                System.out.println("Your array must greater than or equal to 2");
+            }
 
-        int [] compare = {10, -20, 0, 30, 40, 60, 10};
-        System.out.println(Arrays.toString(compare));
+            if (user_arrays != -1)
+                compare_arr.add(user_arrays);
+            System.out.println("Enter the numbers or -1 to quit");
+            user_arrays = input.nextInt();
+        }while(true);
+        //int [] compare = {10, -20, 0, 30, 40, 60, 10};
+        System.out.println("Your Array : "+ compare_arr);
         System.out.println("The first number equal the last number?");
-        if(compare[0] == compare[compare.length -1]){
+        if(compare_arr.get(0) == compare_arr.get(compare_arr.size()-1)){
             System.out.println(true);
         }else{
             System.out.println(false);
@@ -238,7 +251,7 @@ public class Main {
                     }
                     break;
                 case 4:
-                    System.out.println("Sort products alphabetical order");
+                    System.out.println("Sort alphabetical order products");
                     Collections.sort(products); // built-in java methods for Arraylist
                     System.out.println(products);
                     break;
@@ -283,7 +296,6 @@ public class Main {
         System.out.println("Question 9: ");
         System.out.println("Put the odd numbers before even numbers in array");
         int [] all_numbers = {2,3,2,40,1,5,9,4,10,7};
-//        int [] all_numbers = {3,1,2,2,1,4};
         System.out.println("Before arrange: ");
         System.out.println(Arrays.toString(all_numbers));
         ArrayList<Integer> odd_num = new ArrayList<>();
@@ -298,8 +310,6 @@ public class Main {
                even_num.add(all_numbers[i]);
             }
         }
-        System.out.println(odd_num);
-        System.out.println(even_num);
 
         System.out.println("Array after rearrange the odd before even numbers : ");
         for (int i = 0; i < odd_num.size(); i++) {
@@ -330,7 +340,7 @@ public class Main {
             }
         }
         System.out.println("The result: ");
-        if(!flag) System.out.println("The two arrays are the same with valuse : "+Arrays.toString(array_1));
+        if(!flag) System.out.println("The two arrays are the same with values : "+Arrays.toString(array_1));
 
         else System.out.println("The two arrays are Not the same,"+" First Array : "+ Arrays.toString(array_1)+" Second array : "+
                 Arrays.toString(array_2));
